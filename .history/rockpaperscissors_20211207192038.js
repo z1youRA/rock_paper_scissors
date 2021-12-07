@@ -33,4 +33,4 @@ function game() {
     }
 }
 
-game();
+console.log(game());

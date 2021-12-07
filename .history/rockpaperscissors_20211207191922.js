@@ -8,17 +8,14 @@ function computerPlay(){
 function compareWinner(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     if(playerSelection == computerSelection) {
-        console.log("That's a draw! " + playerSelection + " equals " + computerSelection);
         return 0;
         // return "That's a draw! " + playerSelection + " equals " + computerSelection;
     }
     else if((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-        console.log("You lose! " + playerSelection + " loses to " + computerSelection);
         return -1;
         // return "You lose! " + playerSelection + " loses to " + computerSelection; 
     }
     else if((computerSelection == "rock" && playerSelection == "paper") || (computerSelection == "paper" && playerSelection == "scissors") || (computerSelection == "scissors" && playerSelection == "rock")) {
-        console.log("You win!" + playerSelection + " beats " + computerSelection);
         return 1;
         // return "You win!" + playerSelection + " beats " + computerSelection;
     }
@@ -33,4 +30,4 @@ function game() {
     }
 }
 
-game();
+console.log(compareWinner("sCissors", computerPlay()));
