@@ -32,10 +32,10 @@ function game() {
     for(let i = 0; i < 5; i++){
         playerSelection = prompt("Make your choice from rock, paper and scissors:");
         result = compareWinner(playerSelection, computerPlay())
-        if(result == 1) {
+        if(winTimes == 1) {
             winTimes++;
         }
-        else if(result == -1) {
+        else if(winTimes == -1) {
             winTimes--;
         }
     }
