@@ -8,7 +8,7 @@ function computerPlay(){
 function playround(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     let result = 0;
-    const div = document.querySelector('.info');
+    const div = querySelector('.info');
     if(playerSelection == computerSelection) {
         div.textContent = "That's a draw! You both selected " + playerSelection;
         result = 0;
@@ -21,6 +21,7 @@ function playround(playerSelection, computerSelection){
         div.textContent ="You win!" + playerSelection + " beats " + computerSelection;
         result = 1;
     }
+    container.appendChild(div);
     return result;
 }
 
@@ -46,20 +47,20 @@ function game() {
             rslt.textContent = `ROUND${round}`;
             intr.textContent = `POINTS:${win}-${lose}`;
             if(win >= 3) {
-                intr.textContent = `POINTS:${win}-${lose}`;
                 alert('YOU WIN!');
                 win = 0;
                 lose = 0;
                 result = 0;
                 round = 0;
+                intr.textContent = `POINTS:${win}-${lose}`;
             }
             if(lose >= 3) {
-                intr.textContent = `POINTS:${win}-${lose}`;
                 alert('YOU LOSE.');
                 win = 0;
                 lose = 0;
                 result = 0;
                 round = 0;
+                intr.textContent = `POINTS:${win}-${lose}`;
             }
             });
         });

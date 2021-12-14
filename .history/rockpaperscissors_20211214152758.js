@@ -46,20 +46,20 @@ function game() {
             rslt.textContent = `ROUND${round}`;
             intr.textContent = `POINTS:${win}-${lose}`;
             if(win >= 3) {
-                intr.textContent = `POINTS:${win}-${lose}`;
                 alert('YOU WIN!');
                 win = 0;
                 lose = 0;
                 result = 0;
                 round = 0;
+                intr.textContent = `POINTS:${win}-${lose}`;
             }
             if(lose >= 3) {
-                intr.textContent = `POINTS:${win}-${lose}`;
                 alert('YOU LOSE.');
                 win = 0;
                 lose = 0;
                 result = 0;
                 round = 0;
+                intr.textContent = `POINTS:${win}-${lose}`;
             }
             });
         });
