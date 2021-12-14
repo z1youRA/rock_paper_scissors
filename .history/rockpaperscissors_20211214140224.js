@@ -7,11 +7,11 @@ function computerPlay(){
 
 function playround(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
-    let result = 0;
+    const result = 0;
     const div = document.createElement('div');
     const container = document.querySelector('.container');
     if(playerSelection == computerSelection) {
-        div.textContent = "That's a draw! You both selected " + playerSelection;
+        div.textContent = "That's a draw! You both selected" + playerSelection;
         result = 0;
     }
     else if((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {

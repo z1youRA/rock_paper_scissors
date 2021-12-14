@@ -7,24 +7,22 @@ function computerPlay(){
 
 function playround(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
-    let result = 0;
-    const div = document.createElement('div');
+    const result = document.createElement('div');
     const container = document.querySelector('.container');
     if(playerSelection == computerSelection) {
-        div.textContent = "That's a draw! You both selected " + playerSelection;
-        result = 0;
+        result.textContent = "That's a draw! ";
+        return 0;
     }
     else if((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-        div.textContent = "You lose! " + playerSelection + " loses to " + computerSelection;
-        result = -1;
+        console.log("You lose! " + playerSelection + " loses to " + computerSelection);
+        return -1;
     }
     else if((computerSelection == "rock" && playerSelection == "paper") || (computerSelection == "paper" && playerSelection == "scissors") || (computerSelection == "scissors" && playerSelection == "rock")) {
-        div.textContent ="You win!" + playerSelection + " beats " + computerSelection;
-        result = 1;
+        console.log("You win!" + playerSelection + " beats " + computerSelection);
+        return 1;
     }
     else console.error("Invalid Input!");
-    container.appendChild(div);
-    return result;
+    container.appendChild(result);
 }
 
 //Get input from user for 5 times and make the computer pick a random choice and then compete.
