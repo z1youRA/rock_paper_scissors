@@ -23,7 +23,7 @@ function playround(playerSelection, computerSelection){
         result = 1;
     }
     else console.error("Invalid Input!");
-    container.appendChild(div);
+    container.insertBefore(div);
     return result;
 }
 

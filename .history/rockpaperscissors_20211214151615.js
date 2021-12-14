@@ -23,7 +23,7 @@ function playround(playerSelection, computerSelection){
         result = 1;
     }
     else console.error("Invalid Input!");
-    container.appendChild(div);
+    container.insertBefore(div);
     return result;
 }
 
@@ -37,17 +37,11 @@ function game() {
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             result = playround(button.textContent, computerPlay());
-            if(result === 1) {
-                win++;
-            }
-            else if(result === -1) {
-                lose++;
-            }
             round++;
             const rslt = document.querySelector('.result');
             const intr = document.querySelector('.intro');
             rslt.textContent = `ROUND${round}`;
-            intr.textContent = `POINTS:${win}-${lose}`;
+            intr.textContent = `POINTS:${}`
             });
         });
     // for(let i = 0; i < 5; i++){

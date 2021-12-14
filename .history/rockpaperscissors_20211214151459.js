@@ -23,31 +23,24 @@ function playround(playerSelection, computerSelection){
         result = 1;
     }
     else console.error("Invalid Input!");
-    container.appendChild(div);
+    container.insertBefore(div);
     return result;
 }
 
 //Get input from user for 5 times and make the computer pick a random choice and then compete.
 function game() {
-    let win = 0;
-    let lose = 0;
+    let winTimes = 0;
     let result = 0;
     let round = 0;
     const buttons = Array.from(document.querySelectorAll('button'));
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             result = playround(button.textContent, computerPlay());
-            if(result === 1) {
-                win++;
-            }
-            else if(result === -1) {
-                lose++;
-            }
             round++;
             const rslt = document.querySelector('.result');
             const intr = document.querySelector('.intro');
             rslt.textContent = `ROUND${round}`;
-            intr.textContent = `POINTS:${win}-${lose}`;
+            intr.textContent = ``
             });
         });
     // for(let i = 0; i < 5; i++){

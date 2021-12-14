@@ -27,28 +27,22 @@ function playround(playerSelection, computerSelection){
     return result;
 }
 
-//Get input from user for 5 times and make the computer pick a random choice and then compete.
+//Act when one of the buttons was clicked.
 function game() {
-    let win = 0;
-    let lose = 0;
+    result = playround(button.textContent, computerPlay());
+    round++;
+    console.log(round);
+}
+
+
+//Get input from user for 5 times and make the computer pick a random choice and then compete.
+function main() {
+    let winTimes = 0;
     let result = 0;
     let round = 0;
     const buttons = Array.from(document.querySelectorAll('button'));
     buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            result = playround(button.textContent, computerPlay());
-            if(result === 1) {
-                win++;
-            }
-            else if(result === -1) {
-                lose++;
-            }
-            round++;
-            const rslt = document.querySelector('.result');
-            const intr = document.querySelector('.intro');
-            rslt.textContent = `ROUND${round}`;
-            intr.textContent = `POINTS:${win}-${lose}`;
-            });
+        button.addEventListener('click', () => game());
         });
     // for(let i = 0; i < 5; i++){
     //     playerSelection = prompt("Make your choice from rock, paper and scissors:");
@@ -71,4 +65,3 @@ function game() {
     // }
 
 }
-game();
